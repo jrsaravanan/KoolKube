@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  labels: 
+     name: mysql
+     app: db
+spec:
+  containers:
+    - name: mysql-data
+      image: jrsaravanan/mysql
+      ports:
+        - name: mysql-port
+          containerPort: 3306
+          protocol: TCP

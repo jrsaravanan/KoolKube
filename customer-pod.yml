@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: customer-service
+  labels:
+    name: customer-service
+    app: srv
+spec:
+  containers:
+    - name: customer-srv
+      image: jrsaravanan/customer-service
+      env:
+        - name: CUSTOMER_APP_USER
+          value: "appuser"
+        - name: CUSTOMER_APP_PASSWORD
+          value: "appuser"
+        - name: CUSTOMER_DB_URI
+          value: jdbc:mysql://mysql:3306/customers
+      ports:
+        - containerPort: 8080
+
+        
